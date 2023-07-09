@@ -275,15 +275,16 @@ _data = {
 script = ExtResource("1_1jy1v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 position = Vector2(2, -8)
 sprite_frames = SubResource("SpriteFrames_qu5xq")
-animation = &"Attack"
+animation = &"Idle"
 frame = 1
 speed_scale = 1.2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false
-polygon = PackedVector2Array(-5, -8, -5, 5, 10, 5, 10, 2, 7, -3, 11, -4, 11, -8, 7, -10, 7, -15, 4, -18, -1, -18, -4, -15, -4, -8)
+polygon = PackedVector2Array(-5, -7, -5, 5, 8, 5, 8, 0, 7, -3, 10, -3, 10, -4, 10, -8, 7, -9, 7, -15, 4, -18, -1, -18, -4, -15, -5, -9)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.7, 2.7)
@@ -293,5 +294,3 @@ autoplay = "Idle"
 libraries = {
 "": SubResource("AnimationLibrary_lk2o6")
 }
-
-[node name="AnimationTree" type="AnimationTree" parent="."]
