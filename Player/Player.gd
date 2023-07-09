@@ -13,7 +13,7 @@ func get_input():
 	
 	if input_direction[0] == -1:
 		$AnimatedSprite2D.flip_h = true
-	if input_direction[0] == 1: 
+	elif input_direction[0] == 1: 
 		$AnimatedSprite2D.flip_h = false
 	if input_direction:
 		velocity = input_direction * speed
