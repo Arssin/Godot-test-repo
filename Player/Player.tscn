@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://d0mdar2ppjc8n"]
+[gd_scene load_steps=19 format=3 uid="uid://d0mdar2ppjc8n"]
 
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_1jy1v"]
 [ext_resource type="Texture2D" uid="uid://cv2mlqkfoj38r" path="res://Assets/Player/Player.png" id="1_qyfh2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4p6c1"]
@@ -131,13 +132,12 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_1jy1v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -8)
 sprite_frames = SubResource("SpriteFrames_qu5xq")
-animation = &"Death"
-frame = 3
-frame_progress = 0.264407
+animation = &"Idle"
 speed_scale = 1.2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
