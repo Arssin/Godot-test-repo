@@ -143,3 +143,6 @@ speed_scale = 1.2
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false
 polygon = PackedVector2Array(-5, -8, -5, 5, 10, 5, 10, 2, 7, -3, 11, -4, 11, -8, 7, -10, 7, -15, 4, -18, -1, -18, -4, -15, -4, -8)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.7, 2.7)
