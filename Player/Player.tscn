@@ -272,6 +272,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
+texture_filter = 1
 script = ExtResource("1_1jy1v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
