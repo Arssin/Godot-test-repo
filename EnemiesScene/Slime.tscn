@@ -1,75 +1,76 @@
-[gd_scene load_steps=21 format=3 uid="uid://bvgmhpcxt7eks"]
+[gd_scene load_steps=23 format=3 uid="uid://bvgmhpcxt7eks"]
 
-[ext_resource type="Texture2D" uid="uid://lvl13pjxkynv" path="res://Assets/Enemies/Slime-SpriteSheet.png" id="1_11igt"]
+[ext_resource type="Script" path="res://EnemiesScene/Slime.gd" id="1_u5ifx"]
+[ext_resource type="Texture2D" uid="uid://lvl13pjxkynv" path="res://Assets/Enemies/Slime-SpriteSheet.png" id="2_7ir1x"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iasfa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_my6ed"]
-atlas = ExtResource("1_11igt")
+atlas = ExtResource("2_7ir1x")
 region = Rect2(352, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bb5g5"]
-atlas = ExtResource("1_11igt")
+atlas = ExtResource("2_7ir1x")
 region = Rect2(384, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ubmj"]
-atlas = ExtResource("1_11igt")
+atlas = ExtResource("2_7ir1x")
 region = Rect2(416, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5600y"]
-atlas = ExtResource("1_11igt")
+atlas = ExtResource("2_7ir1x")
 region = Rect2(448, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cuygp"]
-atlas = ExtResource("1_11igt")
+atlas = ExtResource("2_7ir1x")
 region = Rect2(480, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h0shm"]
-atlas = ExtResource("1_11igt")
+atlas = ExtResource("2_7ir1x")
 region = Rect2(512, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o3oe0"]
-atlas = ExtResource("1_11igt")
+atlas = ExtResource("2_7ir1x")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ramo"]
-atlas = ExtResource("1_11igt")
+atlas = ExtResource("2_7ir1x")
 region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mmdwu"]
-atlas = ExtResource("1_11igt")
+atlas = ExtResource("2_7ir1x")
 region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xyti1"]
-atlas = ExtResource("1_11igt")
+atlas = ExtResource("2_7ir1x")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vdwvv"]
-atlas = ExtResource("1_11igt")
+atlas = ExtResource("2_7ir1x")
 region = Rect2(256, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uvc8p"]
-atlas = ExtResource("1_11igt")
+atlas = ExtResource("2_7ir1x")
 region = Rect2(288, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cc6vd"]
-atlas = ExtResource("1_11igt")
+atlas = ExtResource("2_7ir1x")
 region = Rect2(320, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0cm2v"]
-atlas = ExtResource("1_11igt")
+atlas = ExtResource("2_7ir1x")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rlcks"]
-atlas = ExtResource("1_11igt")
+atlas = ExtResource("2_7ir1x")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6hxct"]
-atlas = ExtResource("1_11igt")
+atlas = ExtResource("2_7ir1x")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vts3k"]
-atlas = ExtResource("1_11igt")
+atlas = ExtResource("2_7ir1x")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1o2go"]
@@ -146,11 +147,26 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_0qckq"]
+radius = 122.602
+
+[node name="SlimeEnemy" type="CharacterBody2D"]
+scale = Vector2(0.8, 0.8)
+script = ExtResource("1_u5ifx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(2.5, -5)
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_iasfa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3, -6)
 sprite_frames = SubResource("SpriteFrames_1o2go")
-animation = &"Attack"
+animation = &"Idle"
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+position = Vector2(2.5, -5)
+shape = SubResource("CircleShape2D_0qckq")
