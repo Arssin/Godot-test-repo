@@ -119,10 +119,10 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 3.0,
 "texture": SubResource("AtlasTexture_uvc8p")
 }, {
-"duration": 1.0,
+"duration": 5.0,
 "texture": SubResource("AtlasTexture_cc6vd")
 }],
 "loop": true,
@@ -165,6 +165,7 @@ shape = SubResource("CapsuleShape2D_iasfa")
 position = Vector2(3, -6)
 sprite_frames = SubResource("SpriteFrames_1o2go")
 animation = &"Idle"
+frame_progress = 0.0770418
 
 [node name="PlayerDetection" type="Area2D" parent="."]
 collision_layer = 2
