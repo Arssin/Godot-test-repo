@@ -4,8 +4,6 @@ extends CharacterBody2D
 @export var speed = 200
 @onready var anim = $AnimationPlayer
 
-#func _ready():
-#	anim.play("Idle")
 
 
 func get_input():

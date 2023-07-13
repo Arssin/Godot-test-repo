@@ -1,9 +1,14 @@
 extends CharacterBody2D
 
-var speed = 25
+@export var speed = 50
 var player = null
 var chase_player = false
 
+func _physics_process(delta):
+	if chase_player:
+		velocity = (player.position - position).normalized() * speed
+		move_and_slide()
+		move_and_collide(Vector2.ZERO)
 
 func _on_player_detection_body_entered(body):
 	player = body
