@@ -154,7 +154,6 @@ radius = 122.602
 z_index = 2
 scale = Vector2(0.8, 0.8)
 script = ExtResource("1_u5ifx")
-speed = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
