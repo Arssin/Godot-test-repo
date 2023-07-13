@@ -154,6 +154,7 @@ radius = 122.602
 z_index = 2
 scale = Vector2(0.8, 0.8)
 script = ExtResource("1_u5ifx")
+speed = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
@@ -173,6 +174,8 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
 position = Vector2(2.5, -5)
 shape = SubResource("CircleShape2D_0qckq")
+
+[node name="AttackTimer" type="Timer" parent="."]
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]

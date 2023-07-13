@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://d0mdar2ppjc8n"]
+[gd_scene load_steps=27 format=3 uid="uid://d0mdar2ppjc8n"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_1jy1v"]
 [ext_resource type="Texture2D" uid="uid://cv2mlqkfoj38r" path="res://Assets/Player/Player.png" id="1_qyfh2"]
@@ -271,10 +271,16 @@ _data = {
 "Run": SubResource("Animation_2y65r")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ssoag"]
+radius = 50.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_btiel"]
+radius = 24.0
+
 [node name="Player" type="CharacterBody2D"]
 texture_filter = 1
-collision_layer = 2
-collision_mask = 2
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_1jy1v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -297,3 +303,15 @@ autoplay = "Idle"
 libraries = {
 "": SubResource("AnimationLibrary_lk2o6")
 }
+
+[node name="Attract" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attract" groups=["player"]]
+position = Vector2(2, -4)
+shape = SubResource("CircleShape2D_ssoag")
+
+[node name="Attack" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack"]
+position = Vector2(2, -4)
+shape = SubResource("CircleShape2D_btiel")
