@@ -1,9 +1,15 @@
 extends CharacterBody2D
 
-var player 
+var speed = 25
+var player = null
+var chase_player = false
 
 
 func _on_player_detection_body_entered(body):
-	if body.name == "Player":
-		player = $"../../Player/Player"
-		print(player.global_position)
+	player = body
+	chase_player = true
+
+
+func _on_player_detection_body_exited(body):
+	player = null
+	chase_player = false
