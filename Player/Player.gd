@@ -8,11 +8,14 @@ extends CharacterBody2D
 
 func get_input():
 	var input_direction = Input.get_vector("move_left", "move_right","move_up", "move_down")
+
 	
 	if input_direction[0] == -1:
-		$AnimatedSprite2D.flip_h = true
+		$Sprites.scale.x = -1
+#		$Sprites/AnimatedSprite2D.flip_h = true
 	elif input_direction[0] == 1: 
-		$AnimatedSprite2D.flip_h = false
+		$Sprites.scale.x = 1
+#		$Sprites/AnimatedSprite2D.flip_h = false
 	if input_direction:
 		velocity = input_direction * speed
 		anim.play("Run")
