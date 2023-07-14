@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://d0mdar2ppjc8n"]
+[gd_scene load_steps=26 format=3 uid="uid://d0mdar2ppjc8n"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_1jy1v"]
 [ext_resource type="Texture2D" uid="uid://cv2mlqkfoj38r" path="res://Assets/Player/Player.png" id="1_qyfh2"]
+[ext_resource type="Texture2D" uid="uid://cfe72c4y5govb" path="res://Assets/Weapons/MagicWand01.png" id="3_nen8a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4p6c1"]
 atlas = ExtResource("1_qyfh2")
@@ -297,3 +298,8 @@ autoplay = "Idle"
 libraries = {
 "": SubResource("AnimationLibrary_lk2o6")
 }
+
+[node name="Weapons" type="Node" parent="."]
+
+[node name="magic_wand" type="Sprite2D" parent="Weapons"]
+texture = ExtResource("3_nen8a")
