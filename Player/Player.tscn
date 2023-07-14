@@ -218,6 +218,30 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 3]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("magic_wand:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.4, 1.5, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(11, -6), Vector2(10.0667, -6), Vector2(10, -5), Vector2(11, -6)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("magic_wand:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.4, 1.5, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0.0, 0.0, 0.0, 0.0]
+}
 
 [sub_resource type="Animation" id="Animation_hpm11"]
 length = 0.001
@@ -232,6 +256,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("magic_wand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(10, -5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("magic_wand:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.261799]
 }
 
 [sub_resource type="Animation" id="Animation_2y65r"]
@@ -262,6 +310,30 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 3]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("magic_wand:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0.0, 0.261799, 0.261799, 0.261799]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("magic_wand:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(11, -6), Vector2(10, -5), Vector2(9, -7), Vector2(10, -5)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lk2o6"]
 _data = {
@@ -278,6 +350,11 @@ collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_1jy1v")
 
+[node name="magic_wand" type="Sprite2D" parent="."]
+position = Vector2(10, -5)
+rotation = 0.261799
+texture = ExtResource("3_nen8a")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(2, -8)
@@ -288,7 +365,7 @@ speed_scale = 1.2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false
-polygon = PackedVector2Array(-5, -7, -5, 5, 8, 5, 8, 0, 7, -3, 10, -3, 10, -4, 10, -8, 7, -9, 7, -15, 4, -18, -1, -18, -4, -15, -5, -9)
+polygon = PackedVector2Array(-5, -7, -5, 5, 8, 5, 8, 0, 7, -3, 10, -3, 11, -4, 10, -7, 7, -9, 7, -15, 4, -18, -1, -18, -4, -15, -5, -9)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.7, 2.7)
@@ -298,8 +375,3 @@ autoplay = "Idle"
 libraries = {
 "": SubResource("AnimationLibrary_lk2o6")
 }
-
-[node name="Weapons" type="Node" parent="."]
-
-[node name="magic_wand" type="Sprite2D" parent="Weapons"]
-texture = ExtResource("3_nen8a")
