@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://bhbknbmo3f86b"]
 
-[ext_resource type="Script" path="res://main_menu.gd" id="1_gcy4w"]
+[ext_resource type="Script" path="res://Scripts/Levels/main_menu.gd" id="1_mpdrk"]
 
 [node name="Main_Menu" type="Node2D"]
-script = ExtResource("1_gcy4w")
+script = ExtResource("1_mpdrk")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = 2.0

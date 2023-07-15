@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://bgop6q0yepgqp"]
 
+[ext_resource type="Script" path="res://Scripts/Attacks/Range_attack.gd" id="1_32efk"]
 [ext_resource type="Texture2D" uid="uid://docdyymurhkxr" path="res://Assets/Attacks/Normal_range.png" id="1_61ktb"]
-[ext_resource type="Script" path="res://Player/Range_attack.gd" id="1_ld5sy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yxqct"]
 radius = 3.7
 
 [node name="Range_attack" type="Area2D"]
 z_index = 2
-script = ExtResource("1_ld5sy")
+script = ExtResource("1_32efk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_61ktb")

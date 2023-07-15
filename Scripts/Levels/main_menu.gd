@@ -8,4 +8,4 @@ func _on_quitbtn_pressed():
 
 
 func _on_playbtn_pressed():
-	get_tree().change_scene_to_file("res://game_scene.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Levels/town_scene.tscn")

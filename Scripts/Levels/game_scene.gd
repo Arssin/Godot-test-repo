@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var range_attack_manager = $Player/Range_attack_manager
-@onready var player = $Player/Player
+@onready var player: PLAYER = $Player/Player
 
 
 

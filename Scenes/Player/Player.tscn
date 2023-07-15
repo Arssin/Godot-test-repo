@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=3 uid="uid://d0mdar2ppjc8n"]
 
-[ext_resource type="Script" path="res://Player/Player.gd" id="1_1jy1v"]
 [ext_resource type="Texture2D" uid="uid://cv2mlqkfoj38r" path="res://Assets/Player/Player.png" id="1_qyfh2"]
+[ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_rpdlc"]
 [ext_resource type="Texture2D" uid="uid://cfe72c4y5govb" path="res://Assets/Weapons/MagicWand01.png" id="3_nen8a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4p6c1"]
@@ -348,7 +348,7 @@ _data = {
 texture_filter = 1
 collision_layer = 3
 collision_mask = 3
-script = ExtResource("1_1jy1v")
+script = ExtResource("1_rpdlc")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false
@@ -386,3 +386,5 @@ libraries = {
 [node name="Attack_Cooldown" type="Timer" parent="."]
 wait_time = 0.8
 one_shot = true
+
+[node name="Stats" type="Node2D" parent="."]
