@@ -1,8 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://d0mdar2ppjc8n"]
+[gd_scene load_steps=27 format=3 uid="uid://d0mdar2ppjc8n"]
 
 [ext_resource type="Texture2D" uid="uid://cv2mlqkfoj38r" path="res://Assets/Player/Player.png" id="1_qyfh2"]
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_rpdlc"]
 [ext_resource type="Texture2D" uid="uid://cfe72c4y5govb" path="res://Assets/Weapons/MagicWand01.png" id="3_nen8a"]
+[ext_resource type="Script" path="res://Scenes/Player/Stats.gd" id="4_wv4aj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4p6c1"]
 atlas = ExtResource("1_qyfh2")
@@ -388,3 +389,5 @@ wait_time = 0.8
 one_shot = true
 
 [node name="Stats" type="Node2D" parent="."]
+script = ExtResource("4_wv4aj")
+health = null
