@@ -4,6 +4,8 @@ extends CharacterBody2D
 var player = null
 var chase_player = false
 
+var health = 60
+
 func _physics_process(delta):
 	if chase_player:
 		velocity = (player.position - position).normalized() * speed
@@ -29,5 +31,9 @@ func _on_player_detection_body_exited(body):
 	player = null
 	chase_player = false
 
+
+func handle_hit():
+	health -= 20
+	print("enemy hit ", health)
 
 

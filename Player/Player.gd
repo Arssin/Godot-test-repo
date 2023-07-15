@@ -13,6 +13,8 @@ signal player_fired_attack(range_attack, position, direction)
 @onready var attack_cd = $Attack_Cooldown
 
 
+var health = 100
+
 
 func get_input():
 	var input_direction = Input.get_vector("move_left", "move_right","move_up", "move_down")
@@ -48,3 +50,8 @@ func attack_range():
 		var direction_to_mouse = wand_attack_point.global_position.direction_to(target).normalized()
 		emit_signal("player_fired_attack", bullet_instance, wand_attack_point.global_position, direction_to_mouse)
 		attack_cd.start()
+
+
+func handle_hit():
+	health -= 20
+	print("player hit", health)
