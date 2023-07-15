@@ -148,7 +148,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0qckq"]
-radius = 122.602
+radius = 216.264
 
 [sub_resource type="Animation" id="Animation_iyiwa"]
 resource_name = "Move"
