@@ -382,3 +382,7 @@ autoplay = "Idle"
 libraries = {
 "": SubResource("AnimationLibrary_lk2o6")
 }
+
+[node name="Attack_Cooldown" type="Timer" parent="."]
+wait_time = 0.8
+one_shot = true

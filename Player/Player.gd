@@ -10,6 +10,7 @@ signal player_fired_attack(range_attack, position, direction)
 
 @onready var anim = $AnimationPlayer
 @onready var wand_attack_point = $Sprites/Wand_attack_point
+@onready var attack_cd = $Attack_Cooldown
 
 
 
@@ -41,7 +42,9 @@ func _unhandled_input(event):
 		
 
 func attack_range():
-	var bullet_instance = Range_attack.instantiate()
-	var target = get_global_mouse_position()
-	var direction_to_mouse = wand_attack_point.global_position.direction_to(target).normalized()
-	emit_signal("player_fired_attack", bullet_instance, wand_attack_point.global_position, direction_to_mouse)
+	if attack_cd.is_stopped():
+		var bullet_instance = Range_attack.instantiate()
+		var target = get_global_mouse_position()
+		var direction_to_mouse = wand_attack_point.global_position.direction_to(target).normalized()
+		emit_signal("player_fired_attack", bullet_instance, wand_attack_point.global_position, direction_to_mouse)
+		attack_cd.start()
