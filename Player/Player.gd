@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-signal player_fired_attack(range_attack)
+signal player_fired_attack(range_attack, position, direction)
 
 
 @export var Range_attack: PackedScene
@@ -43,9 +43,6 @@ func _unhandled_input(event):
 
 func attack_range():
 	var bullet_instance = Range_attack.instantiate()
-#	add_child(bullet_instance)
-	bullet_instance.global_position = wand_attack_point.global_position
 	var target = get_global_mouse_position()
-	var direction_to_mouse = bullet_instance.global_position.direction_to(target).normalized()
-	bullet_instance.set_direction(direction_to_mouse)
-	emit_signal("player_fired_attack", bullet_instance)
+	var direction_to_mouse = wand_attack_point.global_position.direction_to(target).normalized()
+	emit_signal("player_fired_attack", bullet_instance, wand_attack_point.global_position, direction_to_mouse)
