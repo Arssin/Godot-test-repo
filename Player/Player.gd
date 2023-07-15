@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name PLAYER
 
 signal player_fired_attack(range_attack, position, direction)
 
@@ -18,10 +19,8 @@ func get_input():
 	
 	if position_mouse_x < global_position.x:
 		$Sprites.scale.x = -1
-#		$Sprites/AnimatedSprite2D.flip_h = trues
 	elif position_mouse_x > global_position.x: 
 		$Sprites.scale.x = 1
-#		$Sprites/AnimatedSprite2D.flip_h = false
 	if input_direction:
 		velocity = input_direction * speed
 		anim.play("Run")

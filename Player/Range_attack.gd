@@ -1,4 +1,5 @@
 extends Area2D
+class_name RANGE_ATTACK
 
 @export var speed = 5
 
