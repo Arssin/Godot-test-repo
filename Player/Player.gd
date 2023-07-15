@@ -54,4 +54,4 @@ func attack_range():
 
 func handle_hit():
 	health -= 20
-	print("player hit", health)
+	print("player hit ", health)

@@ -367,7 +367,7 @@ z_index = 1
 texture_filter = 1
 position = Vector2(2, -8)
 sprite_frames = SubResource("SpriteFrames_qu5xq")
-animation = &"Attack"
+animation = &"Idle"
 frame = 1
 speed_scale = 1.2
 
