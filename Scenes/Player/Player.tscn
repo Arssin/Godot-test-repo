@@ -136,7 +136,6 @@ animations = [{
 [sub_resource type="Animation" id="Animation_60bi3"]
 resource_name = "Attack"
 length = 0.45
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -160,6 +159,30 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [0, 1, 2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/magic_wand:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(11, -8), Vector2(11, -9), Vector2(10, -11)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprites/magic_wand:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0.0, 0.0, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_sd8hq"]
@@ -368,12 +391,12 @@ z_index = 1
 texture_filter = 1
 position = Vector2(2, -8)
 sprite_frames = SubResource("SpriteFrames_qu5xq")
-animation = &"Idle"
+animation = &"Attack"
 frame = 1
 speed_scale = 1.2
 
 [node name="Wand_attack_point" type="Marker2D" parent="Sprites"]
-position = Vector2(14, -18)
+position = Vector2(12, -23)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.7, 2.7)
