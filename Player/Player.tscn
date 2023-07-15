@@ -367,9 +367,12 @@ z_index = 1
 texture_filter = 1
 position = Vector2(2, -8)
 sprite_frames = SubResource("SpriteFrames_qu5xq")
-animation = &"Idle"
+animation = &"Attack"
 frame = 1
 speed_scale = 1.2
+
+[node name="Wand_attack_point" type="Marker2D" parent="Sprites"]
+position = Vector2(14, -18)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.7, 2.7)

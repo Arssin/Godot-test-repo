@@ -1411,7 +1411,6 @@ layer_3/tile_data = PackedInt32Array()
 z_index = 2
 position = Vector2(122, 105)
 Range_attack = ExtResource("6_dmdrq")
-speed = 200
 
 [node name="Mobs" type="Node2D" parent="."]
 

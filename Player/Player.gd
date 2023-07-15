@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var Range_attack: PackedScene
 @export var speed = 200
 @onready var anim = $AnimationPlayer
+@onready var wand_attack_point = $Sprites/Wand_attack_point
 
 
 
@@ -39,3 +40,4 @@ func _unhandled_input(event):
 func attack_range():
 	var bullet_instance = Range_attack.instantiate()
 	add_child(bullet_instance)
+	bullet_instance.global_position = wand_attack_point.global_position
