@@ -1,12 +1,13 @@
 extends CharacterBody2D
-#
-@export var speed = 50
+
+
 var player = null
 var chase_player = false
 var enemyIsDead = false
 
+
 @onready var enemy_anim = $SlimeAnimationPlayer
-var health = 60
+@onready var slime_stats = $Stats
 
 
 func _physics_process(delta):
@@ -15,7 +16,7 @@ func _physics_process(delta):
 		await $SlimeAnimationPlayer.animation_finished
 		queue_free()
 	elif chase_player:
-		velocity = (player.position - position).normalized() * speed
+		velocity = (player.position - position).normalized() * slime_stats.speed
 		move_and_collide(velocity * delta)
 		$SlimeAnimationPlayer.play('Move')
 		
@@ -43,8 +44,8 @@ func _on_player_detection_body_exited(body):
 
 
 func handle_hit():
-	health -= 20
-	if health <= 0:
+	slime_stats.health -= 20
+	if slime_stats.health <= 0:
 		enemyIsDead = true
 
 

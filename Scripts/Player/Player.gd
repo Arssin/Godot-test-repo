@@ -5,15 +5,13 @@ signal player_fired_attack(range_attack, position, direction)
 
 
 @export var Range_attack: PackedScene
-@export var speed = 200
 
 
 @onready var anim = $AnimationPlayer
 @onready var wand_attack_point = $Sprites/Wand_attack_point
 @onready var attack_cd = $Attack_Cooldown
+@onready var player_stats = $Stats
 
-
-var health = 100
 
 
 func get_input():
@@ -25,7 +23,7 @@ func get_input():
 	elif position_mouse_x > global_position.x: 
 		$Sprites.scale.x = 1
 	if input_direction:
-		velocity = input_direction * speed
+		velocity = input_direction * player_stats.speed
 		anim.play("Run")
 	else: 
 		velocity = input_direction * 0
@@ -53,5 +51,5 @@ func attack_range():
 
 
 func handle_hit():
-	health -= 20
-	print("player hit ", health)
+	player_stats.health -= 20
+	print("player hit ", player_stats.health)

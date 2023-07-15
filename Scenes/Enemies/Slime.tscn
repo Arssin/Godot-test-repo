@@ -1,7 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://bvgmhpcxt7eks"]
+[gd_scene load_steps=30 format=3 uid="uid://bvgmhpcxt7eks"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/Slime.gd" id="1_dexgf"]
 [ext_resource type="Texture2D" uid="uid://lvl13pjxkynv" path="res://Assets/Enemies/Slime-SpriteSheet.png" id="2_7ir1x"]
+[ext_resource type="Script" path="res://Scenes/Enemies/Stats.gd" id="3_uirhd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iasfa"]
 
@@ -318,6 +319,9 @@ shape = SubResource("CircleShape2D_0qckq")
 libraries = {
 "": SubResource("AnimationLibrary_kslbq")
 }
+
+[node name="Stats" type="Node2D" parent="."]
+script = ExtResource("3_uirhd")
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]

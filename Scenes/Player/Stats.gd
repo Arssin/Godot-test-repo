@@ -1,7 +1,9 @@
 extends Node2D
 
-@export var player_health = 100:
-	set(value):
-		set_player_health(value)
+@export var health = 100:
 	get:
-		return 
+		print('get health', health)
+	set(value):
+		health = value
+ 
+@export var speed = 200

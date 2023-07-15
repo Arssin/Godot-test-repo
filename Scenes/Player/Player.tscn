@@ -390,4 +390,3 @@ one_shot = true
 
 [node name="Stats" type="Node2D" parent="."]
 script = ExtResource("4_wv4aj")
-health = null
