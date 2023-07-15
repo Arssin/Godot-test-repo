@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgop6q0yepgqp"]
+
+[ext_resource type="Texture2D" uid="uid://docdyymurhkxr" path="res://Assets/Attacks/Normal_range.png" id="1_61ktb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yxqct"]
+radius = 3.7
+
+[node name="Range_attack" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_61ktb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("CircleShape2D_yxqct")

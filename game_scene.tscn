@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://8maci53fr6rf"]
+[gd_scene load_steps=13 format=3 uid="uid://8maci53fr6rf"]
 
 [ext_resource type="Texture2D" uid="uid://ba25sbso37jrw" path="res://Assets/Tilesets-Objects/Ground/Tileset.png" id="1_armot"]
 [ext_resource type="Texture2D" uid="uid://cq3580jqppmtr" path="res://Assets/Tilesets-Objects/SprajtTestGóra-Sheet.png" id="2_287cx"]
 [ext_resource type="Texture2D" uid="uid://dcx2sni32jo54" path="res://Assets/Tilesets-Objects/mergedObjects.png" id="3_hmg0a"]
 [ext_resource type="PackedScene" uid="uid://d0mdar2ppjc8n" path="res://Player/Player.tscn" id="3_jtie6"]
 [ext_resource type="Texture2D" uid="uid://1uqijbhyr3nx" path="res://Assets/Tilesets-Objects/Ground/Tileset-Sheet-Sheet.png" id="4_ihssq"]
+[ext_resource type="PackedScene" uid="uid://bgop6q0yepgqp" path="res://Player/Range_attack.tscn" id="6_dmdrq"]
 [ext_resource type="PackedScene" uid="uid://bvgmhpcxt7eks" path="res://EnemiesScene/Slime.tscn" id="6_xy2ti"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hp14u"]
@@ -1409,6 +1410,8 @@ layer_3/tile_data = PackedInt32Array()
 [node name="Player" parent="Player" instance=ExtResource("3_jtie6")]
 z_index = 2
 position = Vector2(122, 105)
+Range_attack = ExtResource("6_dmdrq")
+speed = 200
 
 [node name="Mobs" type="Node2D" parent="."]
 

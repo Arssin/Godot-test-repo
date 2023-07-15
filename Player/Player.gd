@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 
+@export var Range_attack: PackedScene
 @export var speed = 200
 @onready var anim = $AnimationPlayer
 
@@ -31,5 +32,10 @@ func _process(delta):
 
 
 func _unhandled_input(event):
-	pass
+	if event.is_action_pressed("attack_mouse"):
+		attack_range()
+		
 
+func attack_range():
+	var bullet_instance = Range_attack.instantiate()
+	add_child(bullet_instance)
