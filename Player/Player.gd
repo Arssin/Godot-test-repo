@@ -41,3 +41,6 @@ func attack_range():
 	var bullet_instance = Range_attack.instantiate()
 	add_child(bullet_instance)
 	bullet_instance.global_position = wand_attack_point.global_position
+	var target = get_global_mouse_position()
+	var direction_to_mouse = bullet_instance.global_position.direction_to(target).normalized()
+	bullet_instance.set_direction(direction_to_mouse)
