@@ -140,7 +140,7 @@ length = 0.45
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CompositeSprites/AnimatedSprite2D:animation")
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -152,7 +152,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CompositeSprites/AnimatedSprite2D:frame")
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -193,7 +193,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CompositeSprites/AnimatedSprite2D:animation")
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -205,7 +205,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CompositeSprites/AnimatedSprite2D:frame")
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -222,7 +222,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CompositeSprites/AnimatedSprite2D:animation")
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -234,7 +234,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CompositeSprites/AnimatedSprite2D:frame")
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -273,7 +273,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CompositeSprites/AnimatedSprite2D:frame")
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -314,7 +314,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CompositeSprites/AnimatedSprite2D:animation")
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -326,7 +326,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CompositeSprites/AnimatedSprite2D:frame")
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -394,7 +394,26 @@ position = Vector2(12, -23)
 
 [node name="CompositeSprites" type="Node2D" parent="."]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CompositeSprites"]
+[node name="Hands" type="Sprite2D" parent="CompositeSprites"]
+hframes = 10
+
+[node name="Armor" type="Sprite2D" parent="CompositeSprites"]
+hframes = 10
+
+[node name="Helmet" type="Sprite2D" parent="CompositeSprites"]
+hframes = 10
+
+[node name="Pants" type="Sprite2D" parent="CompositeSprites"]
+hframes = 10
+
+[node name="Body" type="Sprite2D" parent="CompositeSprites"]
+texture = ExtResource("4_gsm8t")
+hframes = 10
+
+[node name="Shadow" type="Sprite2D" parent="CompositeSprites"]
+hframes = 10
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false
 z_index = 1
 texture_filter = 1
@@ -403,25 +422,6 @@ sprite_frames = SubResource("SpriteFrames_qu5xq")
 animation = &"Attack"
 frame = 1
 speed_scale = 1.2
-
-[node name="Body" type="Sprite2D" parent="CompositeSprites"]
-texture = ExtResource("4_gsm8t")
-hframes = 10
-
-[node name="Hands" type="Sprite2D" parent="CompositeSprites"]
-hframes = 10
-
-[node name="Armor" type="Sprite2D" parent="CompositeSprites"]
-hframes = 10
-
-[node name="Pants" type="Sprite2D" parent="CompositeSprites"]
-hframes = 10
-
-[node name="Helmet" type="Sprite2D" parent="CompositeSprites"]
-hframes = 10
-
-[node name="Shadow" type="Sprite2D" parent="CompositeSprites"]
-hframes = 10
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.7, 2.7)

@@ -13,7 +13,7 @@ var player_is_attacking
 @onready var armorSprite = $CompositeSprites/Armor
 @onready var shadowSprite = $CompositeSprites/Shadow
 @onready var pantsSprite = $CompositeSprites/Pants
-@onready var helmerSprite = $CompositeSprites/Helmet
+@onready var headSprite = $CompositeSprites/Helmet
 
 
 
@@ -23,6 +23,15 @@ var player_is_attacking
 @onready var player_stats = $Stats
 
 
+const composite_sprites = preload("res://Scripts/CompositeSpriteSheets/Composite_sprites.gd")
+
+func _ready():
+	bodySprite.texture = composite_sprites.body_spritesheet[0]
+	handsSprite.texture = composite_sprites.hands_spritesheet[0]
+	shadowSprite.texture = composite_sprites.shadow_spritesheet[0]
+	headSprite.texture = composite_sprites.head_spritesheet[0]
+	armorSprite.texture = composite_sprites.armor_spritesheet[0]
+	pantsSprite.texture = composite_sprites.pants_spritesheet[0]
 
 func get_input():
 	var input_direction = Input.get_vector("move_left", "move_right","move_up", "move_down")

@@ -22,7 +22,7 @@ const armor_spritesheet = {
 	1: ["Leather armor", preload("res://CompositeSpriteSheets/Body/body_leather_armor.png")]
 }
 
-const lowerBody_spritesheet = {
+const pants_spritesheet = {
 	0: ["Standard pants", preload("res://CompositeSpriteSheets/LowerBody/lowerbody_standard.png")],
 	1: ["Leather pants", preload("res://CompositeSpriteSheets/LowerBody/lowerbody_leather_pants.png")]
 }
