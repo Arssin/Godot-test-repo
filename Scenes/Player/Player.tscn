@@ -1,8 +1,9 @@
-[gd_scene load_steps=27 format=3 uid="uid://d0mdar2ppjc8n"]
+[gd_scene load_steps=28 format=3 uid="uid://d0mdar2ppjc8n"]
 
 [ext_resource type="Texture2D" uid="uid://cv2mlqkfoj38r" path="res://Assets/Player/Player.png" id="1_qyfh2"]
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_rpdlc"]
 [ext_resource type="Texture2D" uid="uid://cfe72c4y5govb" path="res://Assets/Weapons/MagicWand01.png" id="3_nen8a"]
+[ext_resource type="Texture2D" uid="uid://b8ll0fcbi7ori" path="res://CompositeSpriteSheets/Body.png" id="4_gsm8t"]
 [ext_resource type="Script" path="res://Scenes/Player/Stats.gd" id="4_wv4aj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4p6c1"]
@@ -139,7 +140,7 @@ length = 0.45
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprites/AnimatedSprite2D:animation")
+tracks/0/path = NodePath("CompositeSprites/AnimatedSprite2D:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -151,7 +152,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprites/AnimatedSprite2D:frame")
+tracks/1/path = NodePath("CompositeSprites/AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -163,7 +164,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprites/magic_wand:position")
+tracks/2/path = NodePath("WeaponSprites/magic_wand:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -175,7 +176,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Sprites/magic_wand:rotation")
+tracks/3/path = NodePath("WeaponSprites/magic_wand:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -192,7 +193,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprites/AnimatedSprite2D:animation")
+tracks/0/path = NodePath("CompositeSprites/AnimatedSprite2D:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -204,7 +205,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprites/AnimatedSprite2D:frame")
+tracks/1/path = NodePath("CompositeSprites/AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -221,7 +222,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprites/AnimatedSprite2D:animation")
+tracks/0/path = NodePath("CompositeSprites/AnimatedSprite2D:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -233,7 +234,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprites/AnimatedSprite2D:frame")
+tracks/1/path = NodePath("CompositeSprites/AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -245,7 +246,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprites/magic_wand:position")
+tracks/2/path = NodePath("WeaponSprites/magic_wand:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -257,7 +258,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Sprites/magic_wand:rotation")
+tracks/3/path = NodePath("WeaponSprites/magic_wand:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -272,7 +273,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprites/AnimatedSprite2D:frame")
+tracks/0/path = NodePath("CompositeSprites/AnimatedSprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -284,7 +285,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprites/magic_wand:position")
+tracks/1/path = NodePath("WeaponSprites/magic_wand:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -296,7 +297,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprites/magic_wand:rotation")
+tracks/2/path = NodePath("WeaponSprites/magic_wand:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -313,7 +314,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprites/AnimatedSprite2D:animation")
+tracks/0/path = NodePath("CompositeSprites/AnimatedSprite2D:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -325,7 +326,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprites/AnimatedSprite2D:frame")
+tracks/1/path = NodePath("CompositeSprites/AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -337,7 +338,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprites/magic_wand:rotation")
+tracks/2/path = NodePath("WeaponSprites/magic_wand:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -349,7 +350,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Sprites/magic_wand:position")
+tracks/3/path = NodePath("WeaponSprites/magic_wand:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -378,15 +379,23 @@ script = ExtResource("1_rpdlc")
 visible = false
 polygon = PackedVector2Array(-5, -7, -5, 5, 9, 5, 9, 0, 7, -3, 10, -3, 11, -4, 10, -7, 10, -13, 7, -15, 4, -18, -1, -18, -4, -15, -5, -9)
 
-[node name="Sprites" type="Node2D" parent="."]
+[node name="WeaponSprites" type="Node2D" parent="."]
 
-[node name="magic_wand" type="Sprite2D" parent="Sprites"]
+[node name="magic_wand" type="Sprite2D" parent="WeaponSprites"]
+visible = false
 z_index = 1
 position = Vector2(10, -5)
 rotation = 0.261799
 texture = ExtResource("3_nen8a")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprites"]
+[node name="Wand_attack_point" type="Marker2D" parent="WeaponSprites"]
+visible = false
+position = Vector2(12, -23)
+
+[node name="CompositeSprites" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CompositeSprites"]
+visible = false
 z_index = 1
 texture_filter = 1
 position = Vector2(2, -8)
@@ -395,8 +404,24 @@ animation = &"Attack"
 frame = 1
 speed_scale = 1.2
 
-[node name="Wand_attack_point" type="Marker2D" parent="Sprites"]
-position = Vector2(12, -23)
+[node name="Body" type="Sprite2D" parent="CompositeSprites"]
+texture = ExtResource("4_gsm8t")
+hframes = 10
+
+[node name="Hands" type="Sprite2D" parent="CompositeSprites"]
+hframes = 10
+
+[node name="Armor" type="Sprite2D" parent="CompositeSprites"]
+hframes = 10
+
+[node name="Pants" type="Sprite2D" parent="CompositeSprites"]
+hframes = 10
+
+[node name="Helmet" type="Sprite2D" parent="CompositeSprites"]
+hframes = 10
+
+[node name="Shadow" type="Sprite2D" parent="CompositeSprites"]
+hframes = 10
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.7, 2.7)

@@ -8,6 +8,14 @@ signal player_fired_attack(range_attack, position, direction)
 
 var player_is_attacking
 
+@onready var bodySprite = $CompositeSprites/Body
+@onready var handsSprite = $CompositeSprites/Hands
+@onready var armorSprite = $CompositeSprites/Armor
+@onready var shadowSprite = $CompositeSprites/Shadow
+@onready var pantsSprite = $CompositeSprites/Pants
+@onready var helmerSprite = $CompositeSprites/Helmet
+
+
 
 @onready var anim = $AnimationPlayer
 @onready var wand_attack_point = $Sprites/Wand_attack_point
