@@ -394,6 +394,10 @@ position = Vector2(12, -23)
 
 [node name="CompositeSprites" type="Node2D" parent="."]
 
+[node name="Body" type="Sprite2D" parent="CompositeSprites"]
+texture = ExtResource("4_gsm8t")
+hframes = 10
+
 [node name="Hands" type="Sprite2D" parent="CompositeSprites"]
 hframes = 10
 
@@ -404,10 +408,6 @@ hframes = 10
 hframes = 10
 
 [node name="Pants" type="Sprite2D" parent="CompositeSprites"]
-hframes = 10
-
-[node name="Body" type="Sprite2D" parent="CompositeSprites"]
-texture = ExtResource("4_gsm8t")
 hframes = 10
 
 [node name="Shadow" type="Sprite2D" parent="CompositeSprites"]
