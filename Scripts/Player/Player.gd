@@ -34,12 +34,12 @@ func get_input():
 	var input_direction = Input.get_vector("move_left", "move_right","move_up", "move_down")
 	var position_mouse_x = get_global_mouse_position().x
 
-#	print(player_is_attacking)
+	print(position_mouse_x)
 	
-	# if position_mouse_x < global_position.x:
-		# $Sprites.scale.x = -1
-	# elif position_mouse_x > global_position.x: 
-		# $Sprites.scale.x = 1
+	if position_mouse_x < global_position.x:
+		$CompositeSprites.scale.x = -1
+	elif position_mouse_x > global_position.x: 
+		$CompositeSprites.scale.x = 1
 		
 	if player_is_attacking:
 		anim.play("Attack")
@@ -59,20 +59,20 @@ func _process(delta):
 
 func _unhandled_input(event):
 	if event.is_action_pressed("attack_mouse"):
-#		player_is_attacking = true
+		player_is_attacking = true
 		attack_range()
 		
 		
 
 func attack_range():
 	if attack_cd.is_stopped():
-#		if player_is_attacking:
-#			player_is_attacking = false
+		if player_is_attacking:
+			player_is_attacking = false
 			
 		var bullet_instance = Range_attack.instantiate()
 		var target = get_global_mouse_position()
-		# var direction_to_mouse = wawand_attack_point.global_position.direction_to(target).normalized()
-		# emit_signal("player_fired_attack", bullet_instance, wand_attack_point.global_position, direction_to_mouse)
+		var direction_to_mouse = wand_attack_point.global_position.direction_to(target).normalized()
+		emit_signal("player_fired_attack", bullet_instance, wand_attack_point.global_position, direction_to_mouse)
 		attack_cd.start()
 		
 
