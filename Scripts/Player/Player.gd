@@ -17,7 +17,7 @@ var player_is_attacking
 
 
 @onready var anim = $AnimationPlayer
-@onready var wand_attack_point = $Sprites/Wand_attack_point
+@onready var wand_attack_point = $WeaponSprites/Wand_attack_point
 @onready var attack_cd = $Attack_Cooldown
 @onready var player_stats = $Stats
 
