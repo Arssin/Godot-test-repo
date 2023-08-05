@@ -38,8 +38,12 @@ func get_input():
 	
 	if position_mouse_x < global_position.x:
 		$CompositeSprites.scale.x = -1
+		$CollisionPolygon2D.scale.x = -1
+		$WeaponSprites.scale.x = -1
 	elif position_mouse_x > global_position.x: 
 		$CompositeSprites.scale.x = 1
+		$CollisionPolygon2D.scale.x = 1
+		$WeaponSprites.scale.x = 1
 		
 	if player_is_attacking:
 		anim.play("Attack")
