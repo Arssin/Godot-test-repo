@@ -34,7 +34,6 @@ func get_input():
 	var input_direction = Input.get_vector("move_left", "move_right","move_up", "move_down")
 	var position_mouse_x = get_global_mouse_position().x
 
-	print(position_mouse_x)
 	
 	if position_mouse_x < global_position.x:
 		$CompositeSprites.scale.x = -1
