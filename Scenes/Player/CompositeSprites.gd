@@ -1,6 +1,6 @@
 extends Node
 
-var body_spritesheet = {
+const body_spritesheet = {
 	0: preload("res://CompositeSpriteSheets/Body.png")
 }
 

@@ -16,22 +16,19 @@ var player_is_attacking
 @onready var headSprite = $CompositeSprites/Helmet
 
 
-
 @onready var anim = $AnimationPlayer
 @onready var wand_attack_point = $Sprites/Wand_attack_point
 @onready var attack_cd = $Attack_Cooldown
 @onready var player_stats = $Stats
 
 
-const composite_sprites = preload("res://Scripts/CompositeSpriteSheets/Composite_sprites.gd")
-
 func _ready():
-	bodySprite.texture = composite_sprites.body_spritesheet[0]
-	handsSprite.texture = composite_sprites.hands_spritesheet[0]
-	shadowSprite.texture = composite_sprites.shadow_spritesheet[0]
-	headSprite.texture = composite_sprites.head_spritesheet[0]
-	armorSprite.texture = composite_sprites.armor_spritesheet[0]
-	pantsSprite.texture = composite_sprites.pants_spritesheet[0]
+	bodySprite.texture = $CompositeSprites.body_spritesheet[0]
+	handsSprite.texture = $CompositeSprites.hands_spritesheet[0]
+	shadowSprite.texture = $CompositeSprites.shadow_spritesheet[0]
+	headSprite.texture = $CompositeSprites.head_spritesheet[0]
+	armorSprite.texture = $CompositeSprites.armor_spritesheet[0]
+	pantsSprite.texture = $CompositeSprites.pants_spritesheet[0]
 
 func get_input():
 	var input_direction = Input.get_vector("move_left", "move_right","move_up", "move_down")
@@ -39,10 +36,10 @@ func get_input():
 
 #	print(player_is_attacking)
 	
-	if position_mouse_x < global_position.x:
-		$Sprites.scale.x = -1
-	elif position_mouse_x > global_position.x: 
-		$Sprites.scale.x = 1
+	# if position_mouse_x < global_position.x:
+		# $Sprites.scale.x = -1
+	# elif position_mouse_x > global_position.x: 
+		# $Sprites.scale.x = 1
 		
 	if player_is_attacking:
 		anim.play("Attack")
@@ -74,8 +71,8 @@ func attack_range():
 			
 		var bullet_instance = Range_attack.instantiate()
 		var target = get_global_mouse_position()
-		var direction_to_mouse = wand_attack_point.global_position.direction_to(target).normalized()
-		emit_signal("player_fired_attack", bullet_instance, wand_attack_point.global_position, direction_to_mouse)
+		# var direction_to_mouse = wawand_attack_point.global_position.direction_to(target).normalized()
+		# emit_signal("player_fired_attack", bullet_instance, wand_attack_point.global_position, direction_to_mouse)
 		attack_cd.start()
 		
 
