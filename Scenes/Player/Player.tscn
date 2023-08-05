@@ -428,8 +428,8 @@ collision_mask = 3
 script = ExtResource("1_rpdlc")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-visible = false
-polygon = PackedVector2Array(-5, -7, -5, 5, 9, 5, 9, 0, 7, -3, 10, -3, 11, -4, 10, -7, 10, -13, 7, -15, 4, -18, -1, -18, -4, -15, -5, -9)
+position = Vector2(-3, 10)
+polygon = PackedVector2Array(-6, -6, -4, 3, 9, 3, 9, 0, 10, -2, 12, -3, 12, -4, 10, -7, 10, -13, 7, -16, 4, -18, -1, -18, -6, -15, -6, -9)
 
 [node name="WeaponSprites" type="Node2D" parent="."]
 
