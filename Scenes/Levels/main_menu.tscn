@@ -8,8 +8,8 @@ script = ExtResource("1_mpdrk")
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = 2.0
 offset_top = -1.0
-offset_right = 2290.0
-offset_bottom = 1391.0
+offset_right = 1916.0
+offset_bottom = 1202.0
 color = Color(0.364706, 0.247059, 0.0666667, 0.92549)
 
 [node name="play-btn" type="Button" parent="."]
@@ -18,7 +18,7 @@ offset_left = 728.0
 offset_top = 349.0
 offset_right = 1156.0
 offset_bottom = 488.0
-text = "Play"
+text = "PLAY"
 
 [node name="quit-btn" type="Button" parent="."]
 z_index = 1
