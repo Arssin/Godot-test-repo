@@ -7,5 +7,3 @@ extends Node2D
 
 func _ready():
 	player.connect("player_fired_attack", Callable(range_attack_manager, "handle_range_attack_spawned"))
-
-

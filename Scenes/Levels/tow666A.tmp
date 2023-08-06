@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://8maci53fr6rf"]
+[gd_scene load_steps=15 format=3 uid="uid://8maci53fr6rf"]
 
 [ext_resource type="Texture2D" uid="uid://ba25sbso37jrw" path="res://Assets/Tilesets-Objects/Ground/Tileset.png" id="1_armot"]
 [ext_resource type="Script" path="res://Scripts/Levels/game_scene.gd" id="1_s5d68"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d0mdar2ppjc8n" path="res://Scenes/Player/Player.tscn" id="3_jtie6"]
 [ext_resource type="Texture2D" uid="uid://1uqijbhyr3nx" path="res://Assets/Tilesets-Objects/Ground/Tileset-Sheet-Sheet.png" id="4_ihssq"]
 [ext_resource type="PackedScene" uid="uid://bvgmhpcxt7eks" path="res://Scenes/Enemies/Slime.tscn" id="6_xy2ti"]
+[ext_resource type="PackedScene" uid="uid://bgop6q0yepgqp" path="res://Scenes/Projectiles/Range_attack.tscn" id="7_7v6i3"]
 [ext_resource type="Script" path="res://Scripts/Attacks/Rane_attack_manager.gd" id="8_1xurt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hp14u"]
@@ -1411,6 +1412,7 @@ layer_3/tile_data = PackedInt32Array()
 
 [node name="Player" parent="Player" instance=ExtResource("3_jtie6")]
 position = Vector2(89, 185)
+Range_attack = ExtResource("7_7v6i3")
 
 [node name="Range_attack_manager" type="Node2D" parent="Player"]
 script = ExtResource("8_1xurt")

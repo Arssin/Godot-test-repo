@@ -45,10 +45,10 @@ func get_input():
 		$WeaponSprites.scale.x = 1
 		
 		
-# Ten fragment jest do przemyślenia więcej na githubie	
 	if attack_cd.is_stopped():
 		if Input.is_action_just_pressed("attack_mouse"):
 			attack_range()
+			# Ten fragment jest do przemyślenia więcej na githubie	
 			# velocity = input_direction * 0
 			# anim.play("Attack")
 		else:
@@ -80,14 +80,8 @@ func attack_range():
 	emit_signal("player_fired_attack", bullet_instance, wand_attack_point.global_position, direction_to_mouse)
 	attack_cd.start()
 
-		
 
-	
-	
-
-
-
-func handle_hit():
+# func handle_hit():
 #	player_stats.health -= 20
-	print("player hit ", player_stats.health)
+	# print("player hit ", player_stats.health)
 

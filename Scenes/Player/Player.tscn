@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://d0mdar2ppjc8n"]
+[gd_scene load_steps=17 format=3 uid="uid://d0mdar2ppjc8n"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_rpdlc"]
+[ext_resource type="PackedScene" uid="uid://bgop6q0yepgqp" path="res://Scenes/Projectiles/Range_attack.tscn" id="2_acjq6"]
 [ext_resource type="Texture2D" uid="uid://cfe72c4y5govb" path="res://Assets/Weapons/MagicWand01.png" id="3_nen8a"]
 [ext_resource type="Script" path="res://Scripts/Player/CompositeSprites.gd" id="3_tlypv"]
 [ext_resource type="Texture2D" uid="uid://b8ll0fcbi7ori" path="res://CompositeSpriteSheets/Body.png" id="4_gsm8t"]
@@ -449,6 +450,7 @@ texture_filter = 1
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_rpdlc")
+Range_attack = ExtResource("2_acjq6")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-3, 10)
