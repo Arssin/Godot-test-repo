@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bvgmhpcxt7eks"]
+[gd_scene load_steps=31 format=3 uid="uid://bvgmhpcxt7eks"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/Slime.gd" id="1_dexgf"]
 [ext_resource type="Texture2D" uid="uid://lvl13pjxkynv" path="res://Assets/Enemies/Slime-SpriteSheet.png" id="2_7ir1x"]
@@ -288,6 +288,9 @@ _data = {
 "RESET": SubResource("Animation_3sduy")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_likhc"]
+radius = 22.5347
+
 [node name="SlimeEnemy" type="CharacterBody2D"]
 z_index = 2
 scale = Vector2(0.8, 0.8)
@@ -322,6 +325,12 @@ libraries = {
 
 [node name="Stats" type="Node2D" parent="."]
 script = ExtResource("3_uirhd")
+
+[node name="enemy_hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hitbox"]
+position = Vector2(1.25, -3.75)
+shape = SubResource("CircleShape2D_likhc")
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]

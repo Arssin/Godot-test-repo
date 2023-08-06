@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d0mdar2ppjc8n"]
+[gd_scene load_steps=18 format=3 uid="uid://d0mdar2ppjc8n"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_rpdlc"]
 [ext_resource type="PackedScene" uid="uid://bgop6q0yepgqp" path="res://Scenes/Projectiles/Range_attack.tscn" id="2_acjq6"]
@@ -445,6 +445,9 @@ _data = {
 "Run": SubResource("Animation_2y65r")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_2h8kj"]
+radius = 14.0
+
 [node name="Player" type="CharacterBody2D"]
 texture_filter = 1
 collision_layer = 3
@@ -517,5 +520,11 @@ one_shot = true
 
 [node name="Stats" type="Node2D" parent="."]
 script = ExtResource("4_wv4aj")
+
+[node name="player_hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox"]
+position = Vector2(-1, 4)
+shape = SubResource("CircleShape2D_2h8kj")
 
 [connection signal="timeout" from="Attack_Cooldown" to="." method="_on_attack_cooldown_timeout"]
