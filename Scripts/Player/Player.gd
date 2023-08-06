@@ -6,7 +6,7 @@ signal player_fired_attack(range_attack, position, direction)
 
 @export var Range_attack: PackedScene
 
-var player_is_attacking
+var player_attack_in_progress = false
 
 @onready var bodySprite = $CompositeSprites/Body
 @onready var handsSprite = $CompositeSprites/Hands
@@ -44,14 +44,25 @@ func get_input():
 		$CollisionPolygon2D.scale.x = 1
 		$WeaponSprites.scale.x = 1
 		
-	if player_is_attacking:
-		anim.play("Attack")
-	elif input_direction:
+		
+# Ten fragment jest do przemyślenia więcej na githubie	
+	if attack_cd.is_stopped():
+		if Input.is_action_just_pressed("attack_mouse"):
+			attack_range()
+			# velocity = input_direction * 0
+			# anim.play("Attack")
+		else:
+			Global.player_current_attack = false
+			player_attack_in_progress = false
+
+	if input_direction and anim.current_animation != "Attack":
 		velocity = input_direction * player_stats.speed
 		anim.play("Run")
-	else: 
+	elif anim.current_animation != "Attack": 
 		velocity = input_direction * 0
 		anim.play("Idle")
+		
+		
 
 
 
@@ -60,27 +71,23 @@ func _process(delta):
 	move_and_slide()
 
 
-func _unhandled_input(event):
-	if event.is_action_pressed("attack_mouse"):
-		player_is_attacking = true
-		attack_range()
-		
+func attack_range():
+	Global.player_current_attack = true
+	player_attack_in_progress = true
+	var bullet_instance = Range_attack.instantiate()
+	var target = get_global_mouse_position()
+	var direction_to_mouse = wand_attack_point.global_position.direction_to(target).normalized()
+	emit_signal("player_fired_attack", bullet_instance, wand_attack_point.global_position, direction_to_mouse)
+	attack_cd.start()
+
 		
 
-func attack_range():
-	if attack_cd.is_stopped():
-		if player_is_attacking:
-			player_is_attacking = false
-			
-		var bullet_instance = Range_attack.instantiate()
-		var target = get_global_mouse_position()
-		var direction_to_mouse = wand_attack_point.global_position.direction_to(target).normalized()
-		emit_signal("player_fired_attack", bullet_instance, wand_attack_point.global_position, direction_to_mouse)
-		attack_cd.start()
-		
+	
+	
 
 
 
 func handle_hit():
-	player_stats.health -= 20
+#	player_stats.health -= 20
 	print("player hit ", player_stats.health)
+
