@@ -49,5 +49,8 @@ func handle_hit():
 		enemyIsDead = true
 
 
+func enemy():
+	pass
+
 
 

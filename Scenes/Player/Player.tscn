@@ -460,6 +460,7 @@ position = Vector2(-3, 10)
 polygon = PackedVector2Array(-6, -6, -4, 3, 9, 3, 9, 0, 10, -2, 12, -3, 12, -4, 10, -7, 10, -13, 7, -16, 4, -18, -1, -18, -6, -15, -6, -9)
 
 [node name="WeaponSprites" type="Node2D" parent="."]
+z_index = 1
 
 [node name="magic_wand" type="Sprite2D" parent="WeaponSprites"]
 z_index = 1
@@ -471,6 +472,7 @@ texture = ExtResource("3_nen8a")
 position = Vector2(13, -14)
 
 [node name="CompositeSprites" type="Node2D" parent="."]
+z_index = 1
 script = ExtResource("3_tlypv")
 
 [node name="Body" type="Sprite2D" parent="CompositeSprites"]

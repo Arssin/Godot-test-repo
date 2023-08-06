@@ -72,6 +72,7 @@ func get_input():
 
 
 func _process(delta):
+	print(enemy_inattack_range)
 	get_input()
 	move_and_slide()
 
@@ -93,12 +94,12 @@ func attack_range():
 
 
 func _on_player_hitbox_body_entered(body):
-	if body.has.method('enemy'):
+	if body.has_method('enemy'):
 		enemy_inattack_range = true
 	
 
 func _on_player_hitbox_body_exited(body):
-	if body.has.method('enemy'):
+	if body.has_method('enemy'):
 		enemy_inattack_range = false
 
 
