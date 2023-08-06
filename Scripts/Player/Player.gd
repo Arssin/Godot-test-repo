@@ -85,3 +85,12 @@ func attack_range():
 #	player_stats.health -= 20
 	# print("player hit ", player_stats.health)
 
+
+
+func _on_player_hitbox_body_entered(body):
+	pass # Replace with function body.
+	
+	
+
+func _on_player_hitbox_body_exited(body):
+	pass # Replace with function body.
