@@ -3,8 +3,7 @@ class_name PLAYER
 
 signal player_fired_attack(range_attack, position, direction)
 
-var enemy_inattack_range = false
-var enemy_attack_coldown = false
+
 var player_alive = true
 
 
@@ -72,8 +71,8 @@ func get_input():
 
 
 func _process(delta):
-	print(enemy_inattack_range)
 	get_input()
+	# enemy_attack()
 	move_and_slide()
 
 
@@ -95,13 +94,17 @@ func attack_range():
 
 func _on_player_hitbox_body_entered(body):
 	if body.has_method('enemy'):
-		enemy_inattack_range = true
+		print('enter')
+		SlimeStats.enemy_inattack_range = true
 	
 
 func _on_player_hitbox_body_exited(body):
 	if body.has_method('enemy'):
-		enemy_inattack_range = false
+		SlimeStats.enemy_inattack_range = false
 
 
 func enemy_attack():
-	pass
+	# print(SlimeStats.enemy_inattack_range, SlimeStats.enemy_cooldown_attack)
+	if SlimeStats.enemy_inattack_range and SlimeStats.enemy_cooldown_attack:
+		SlimeStats.enemy_cooldown_attack = false
+		print('Player took dmg')

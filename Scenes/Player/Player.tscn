@@ -5,12 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://cfe72c4y5govb" path="res://Assets/Weapons/MagicWand01.png" id="3_nen8a"]
 [ext_resource type="Script" path="res://Scripts/Player/CompositeSprites.gd" id="3_tlypv"]
 [ext_resource type="Texture2D" uid="uid://b8ll0fcbi7ori" path="res://CompositeSpriteSheets/Body.png" id="4_gsm8t"]
-[ext_resource type="Script" path="res://Scenes/Player/Stats.gd" id="4_wv4aj"]
 [ext_resource type="Texture2D" uid="uid://dd7a7gqhdpsl" path="res://CompositeSpriteSheets/Hands.png" id="5_vx04q"]
 [ext_resource type="Texture2D" uid="uid://dfm061ixhmt7m" path="res://CompositeSpriteSheets/Head/head_standard_hair.png" id="6_kw7an"]
 [ext_resource type="Texture2D" uid="uid://cp314a12l5q6t" path="res://CompositeSpriteSheets/Body/body_main.png" id="7_rxwx1"]
 [ext_resource type="Texture2D" uid="uid://cjg7rknux38in" path="res://CompositeSpriteSheets/LowerBody/lowerbody_standard.png" id="8_rbnsl"]
 [ext_resource type="Texture2D" uid="uid://bbi6iagupic77" path="res://CompositeSpriteSheets/shadow.png" id="9_k6f6u"]
+[ext_resource type="Script" path="res://Scripts/Global/PlayerStats.gd" id="11_d3sfg"]
 
 [sub_resource type="Animation" id="Animation_60bi3"]
 resource_name = "Attack"
@@ -521,7 +521,7 @@ wait_time = 0.8
 one_shot = true
 
 [node name="Stats" type="Node2D" parent="."]
-script = ExtResource("4_wv4aj")
+script = ExtResource("11_d3sfg")
 
 [node name="player_hitbox" type="Area2D" parent="."]
 

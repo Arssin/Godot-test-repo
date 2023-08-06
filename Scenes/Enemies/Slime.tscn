@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Enemies/Slime.gd" id="1_dexgf"]
 [ext_resource type="Texture2D" uid="uid://lvl13pjxkynv" path="res://Assets/Enemies/Slime-SpriteSheet.png" id="2_7ir1x"]
-[ext_resource type="Script" path="res://Scenes/Enemies/Stats.gd" id="3_uirhd"]
+[ext_resource type="Script" path="res://Scripts/Global/SlimeStats.gd" id="3_o1km1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iasfa"]
 
@@ -289,7 +289,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_likhc"]
-radius = 22.5347
+radius = 56.2639
 
 [node name="SlimeEnemy" type="CharacterBody2D"]
 z_index = 2
@@ -305,7 +305,7 @@ shape = SubResource("CapsuleShape2D_iasfa")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(3, -6)
 sprite_frames = SubResource("SpriteFrames_1o2go")
-animation = &"Death"
+animation = &"Attack"
 frame = 1
 
 [node name="PlayerDetection" type="Area2D" parent="."]
@@ -317,6 +317,8 @@ position = Vector2(2.5, -5)
 shape = SubResource("CircleShape2D_0qckq")
 
 [node name="AttackTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 
 [node name="SlimeAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -324,7 +326,7 @@ libraries = {
 }
 
 [node name="Stats" type="Node2D" parent="."]
-script = ExtResource("3_uirhd")
+script = ExtResource("3_o1km1")
 
 [node name="enemy_hitbox" type="Area2D" parent="."]
 
@@ -334,3 +336,6 @@ shape = SubResource("CircleShape2D_likhc")
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="body_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_entered"]
+[connection signal="body_exited" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_exited"]
