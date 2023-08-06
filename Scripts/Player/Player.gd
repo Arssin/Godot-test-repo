@@ -3,6 +3,11 @@ class_name PLAYER
 
 signal player_fired_attack(range_attack, position, direction)
 
+var enemy_inattack_range = false
+var enemy_attack_coldown = false
+var player_alive = true
+
+
 
 @export var Range_attack: PackedScene
 
@@ -88,9 +93,14 @@ func attack_range():
 
 
 func _on_player_hitbox_body_entered(body):
-	pass # Replace with function body.
-	
+	if body.has.method('enemy'):
+		enemy_inattack_range = true
 	
 
 func _on_player_hitbox_body_exited(body):
-	pass # Replace with function body.
+	if body.has.method('enemy'):
+		enemy_inattack_range = false
+
+
+func enemy_attack():
+	pass
