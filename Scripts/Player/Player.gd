@@ -4,10 +4,6 @@ class_name PLAYER
 signal player_fired_attack(range_attack, position, direction)
 
 
-var player_alive = true
-
-
-
 @export var Range_attack: PackedScene
 
 var player_attack_in_progress = false
@@ -23,7 +19,7 @@ var player_attack_in_progress = false
 @onready var anim = $AnimationPlayer
 @onready var wand_attack_point = $WeaponSprites/Wand_attack_point
 @onready var attack_cd = $Attack_Cooldown
-@onready var player_stats = $Stats
+@onready var player_stats = PlayerStats
 
 
 func _ready():
@@ -60,7 +56,7 @@ func get_input():
 			player_attack_in_progress = false
 
 	if input_direction and anim.current_animation != "Attack":
-		velocity = input_direction * player_stats.speed
+		velocity = input_direction * player_stats.player_speed
 		anim.play("Run")
 	elif anim.current_animation != "Attack": 
 		velocity = input_direction * 0
@@ -72,8 +68,7 @@ func get_input():
 
 func _process(delta):
 	get_input()
-	player()
-	# enemy_attack()
+	handle_player_dead()
 	move_and_slide()
 
 
@@ -87,30 +82,10 @@ func attack_range():
 	attack_cd.start()
 
 
-# func handle_hit():
-#	player_stats.health -= 20
-	# print("player hit ", player_stats.health)
+func handle_player_dead():
+	print(player_stats.player_health)
+	# if player_stats.player_health <= 0:
+		# print('playerDead')
+		# queue_free()
 
 
-
-#func _on_player_hitbox_body_entered(body):
-	#if body.has_method('enemy'):
-		#print('enter')
-		#SlimeStats.enemy_inattack_range = true
-	
-
-#func _on_player_hitbox_body_exited(body):
-	#if body.has_method('enemy'):
-		#SlimeStats.enemy_inattack_range = false
-
-
-#func enemy_attack():
-	# print(SlimeStats.enemy_inattack_range, SlimeStats.enemy_cooldown_attack)
-	#if c and SlimeStats.enemy_cooldown_attack:
-		#SlimeStats.enemy_cooldown_attack = sfalse
-		#print('Player took dmg')
-
-
-
-func player():
-	pass

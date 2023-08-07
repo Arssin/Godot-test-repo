@@ -1,12 +1,12 @@
 extends Node2D
 
-var health = 60:
+@export var health = 60:
 	get: 
 		return health
 	set(value):
 		health = value
 
-var speed = 50
+@export var speed = 50
 
 
 var player_is_inattack_range = false
