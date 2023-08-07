@@ -113,5 +113,4 @@ func attack_range():
 
 
 func player():
-	if SlimeStats.player_is_inattack_range  and SlimeStats.enemy_has_cooldown_attack == false:
-		print('player got hit!')
+	pass
