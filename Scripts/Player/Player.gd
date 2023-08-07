@@ -23,6 +23,7 @@ var player_attack_in_progress = false
 
 
 func _ready():
+	player_stats.player_health = 100
 	bodySprite.texture = $CompositeSprites.body_spritesheet[0]
 	handsSprite.texture = $CompositeSprites.hands_spritesheet[0]
 	shadowSprite.texture = $CompositeSprites.shadow_spritesheet[0]
@@ -83,9 +84,9 @@ func attack_range():
 
 
 func handle_player_dead():
-	print(player_stats.player_health)
-	# if player_stats.player_health <= 0:
-		# print('playerDead')
-		# queue_free()
+	if player_stats.player_health <= 0:
+		print('Player Dead')
+		get_tree().reload_current_scene()
+		get_tree().change_scene_to_file("res://Scenes/Levels/youre_dead.tscn")
 
 

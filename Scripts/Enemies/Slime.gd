@@ -57,9 +57,7 @@ func attack_player():
 	if player_is_inattack_range and !enemy_has_cooldown_attack:
 		enemy_has_cooldown_attack = true
 		$AttackTimer.start()
-		print('Slime attack!')
 		PlayerStats.player_health -= 20
-		print('yyeee', PlayerStats.player_health)
 		
 
 
@@ -67,13 +65,11 @@ func attack_player():
 
 func _on_enemy_hitbox_body_entered(body):
 	if body.has_method('handle_player_dead'):
-		print('entered body')
 		player_is_inattack_range = true
 
 
 func _on_enemy_hitbox_body_exited(body):
 	if body.has_method('handle_player_dead'):
-		print('wyszedł gracz')
 		player_is_inattack_range = false
 
 
