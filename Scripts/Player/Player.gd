@@ -70,6 +70,7 @@ func get_input():
 func _process(delta):
 	get_input()
 	handle_player_dead()
+	update_player_healthbar()
 	move_and_slide()
 
 
@@ -88,5 +89,10 @@ func handle_player_dead():
 		print('Player Dead')
 		get_tree().reload_current_scene()
 		get_tree().change_scene_to_file("res://Scenes/Levels/youre_dead.tscn")
+		
+
+func update_player_healthbar():
+	var healthbar = $PlayerHealthbar
+	healthbar.value = player_stats.player_health
 
 

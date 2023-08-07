@@ -7,14 +7,14 @@ var enemyIsDead = false
 
 
 @onready var enemy_anim = $SlimeAnimationPlayer
-@onready var slime_stats = SlimeStats
+@onready var slime_stats = $Stats
 @onready var slime_cd = $AttackTimer
 
 var enemy_has_cooldown_attack = false
 var player_is_inattack_range = false
 
 func _ready():
-	slime_stats.health = 60
+	$Stats.health = 60
 
 func _physics_process(delta):
 	attack_player()
@@ -51,8 +51,8 @@ func _on_player_detection_body_exited(body):
 
 
 func handle_hit():
-	slime_stats.health -= 20
-	if slime_stats.health <= 0:
+	$Stats.health -= 20
+	if $Stats.health <= 0:
 		enemyIsDead = true
 
 

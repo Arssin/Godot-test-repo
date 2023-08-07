@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://d0mdar2ppjc8n"]
+[gd_scene load_steps=20 format=3 uid="uid://d0mdar2ppjc8n"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_rpdlc"]
 [ext_resource type="PackedScene" uid="uid://bgop6q0yepgqp" path="res://Scenes/Projectiles/Range_attack.tscn" id="2_acjq6"]
@@ -448,6 +448,27 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_2h8kj"]
 radius = 14.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_im7ri"]
+bg_color = Color(0.733333, 0.52549, 0.658824, 0)
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.305882, 0.235294, 0.552941, 1)
+border_blend = true
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k1lp7"]
+bg_color = Color(0.380392, 0.682353, 0.427451, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.105882, 0.341176, 0.027451, 1)
+border_blend = true
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+
 [node name="Player" type="CharacterBody2D"]
 texture_filter = 1
 collision_layer = 3
@@ -528,6 +549,17 @@ script = ExtResource("11_d3sfg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox"]
 position = Vector2(-1, 4)
 shape = SubResource("CircleShape2D_2h8kj")
+
+[node name="PlayerHealthbar" type="ProgressBar" parent="."]
+offset_left = -302.0
+offset_top = -188.0
+offset_right = -70.0
+offset_bottom = -161.0
+theme_override_constants/outline_size = 50
+theme_override_styles/background = SubResource("StyleBoxFlat_im7ri")
+theme_override_styles/fill = SubResource("StyleBoxFlat_k1lp7")
+value = 60.0
+show_percentage = false
 
 [connection signal="timeout" from="Attack_Cooldown" to="." method="_on_attack_cooldown_timeout"]
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
