@@ -9,5 +9,5 @@ var health = 60:
 var speed = 50
 
 
-var enemy_inattack_range = false
-var enemy_cooldown_attack = true
+var player_is_inattack_range = false
+var enemy_has_cooldown_attack = false

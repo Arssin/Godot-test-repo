@@ -72,6 +72,7 @@ func get_input():
 
 func _process(delta):
 	get_input()
+	player()
 	# enemy_attack()
 	move_and_slide()
 
@@ -92,19 +93,25 @@ func attack_range():
 
 
 
-func _on_player_hitbox_body_entered(body):
-	if body.has_method('enemy'):
-		print('enter')
-		SlimeStats.enemy_inattack_range = true
+#func _on_player_hitbox_body_entered(body):
+	#if body.has_method('enemy'):
+		#print('enter')
+		#SlimeStats.enemy_inattack_range = true
 	
 
-func _on_player_hitbox_body_exited(body):
-	if body.has_method('enemy'):
-		SlimeStats.enemy_inattack_range = false
+#func _on_player_hitbox_body_exited(body):
+	#if body.has_method('enemy'):
+		#SlimeStats.enemy_inattack_range = false
 
 
-func enemy_attack():
+#func enemy_attack():
 	# print(SlimeStats.enemy_inattack_range, SlimeStats.enemy_cooldown_attack)
-	if SlimeStats.enemy_inattack_range and SlimeStats.enemy_cooldown_attack:
-		SlimeStats.enemy_cooldown_attack = false
-		print('Player took dmg')
+	#if c and SlimeStats.enemy_cooldown_attack:
+		#SlimeStats.enemy_cooldown_attack = sfalse
+		#print('Player took dmg')
+
+
+
+func player():
+	if SlimeStats.player_is_inattack_range  and SlimeStats.enemy_has_cooldown_attack == false:
+		print('player got hit!')

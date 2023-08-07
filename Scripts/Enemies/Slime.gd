@@ -11,7 +11,7 @@ var enemyIsDead = false
 @onready var slime_cd = $AttackTimer
 
 func _physics_process(delta):
-	enemy()
+	#enemy()
 	
 	if enemyIsDead:
 		$SlimeAnimationPlayer.play('Death')
@@ -49,23 +49,33 @@ func handle_hit():
 	if slime_stats.health <= 0:
 		enemyIsDead = true
 
-func enemy():
-	if SlimeStats.enemy_inattack_range and SlimeStats.enemy_cooldown_attack:
-		SlimeStats.enemy_cooldown_attack = false
-		print('Player took dmg')
+# func enemy():
+	#if SlimeStats.enemy_inattack_range and SlimeStats.enemy_cooldown_attack:
+		#SlimeStats.enemy_cooldown_attack = false
+		#print('Player took dmg')
 
-	if SlimeStats.enemy_cooldown_attack == false:
-		slime_cd.start()
+	#if SlimeStats.enemy_cooldown_attack == false:
+		#slime_cd.start()
 	
 
-func _on_attack_timer_timeout():
-	print('calling it')
-	SlimeStats.enemy_cooldown_attack = true
-
+	
 
 func _on_enemy_hitbox_body_entered(body):
-	pass # Replace with function body.
+	if body.has_method('player'):
+		print('wyszedł')
+		SlimeStats.player_is_inattack_range = true
+		if SlimeStats.enemy_has_cooldown_attack == false:
+			SlimeStats.enemy_has_cooldown_attack = true
+			$AttackTimer.start()
+		
+		if $AttackTimer.is_stopped():
+			SlimeStats.enemy_has_cooldown_attack = false
+		
+		
+	
 
 
 func _on_enemy_hitbox_body_exited(body):
-	pass # Replace with function body.
+	if body.has_method('player'):
+		print('wyszedł gracz')
+		SlimeStats.player_is_inattack_range = false
