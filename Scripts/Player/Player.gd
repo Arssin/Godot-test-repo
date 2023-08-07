@@ -23,7 +23,7 @@ var player_attack_in_progress = false
 
 
 func _ready():
-	player_stats.player_health = 100
+	player_stats.player_health = $Stats.player_health
 	bodySprite.texture = $CompositeSprites.body_spritesheet[0]
 	handsSprite.texture = $CompositeSprites.hands_spritesheet[0]
 	shadowSprite.texture = $CompositeSprites.shadow_spritesheet[0]
@@ -34,7 +34,6 @@ func _ready():
 func get_input():
 	var input_direction = Input.get_vector("move_left", "move_right","move_up", "move_down")
 	var position_mouse_x = get_global_mouse_position().x
-
 	
 	if position_mouse_x < global_position.x:
 		$CompositeSprites.scale.x = -1

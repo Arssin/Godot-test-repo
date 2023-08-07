@@ -551,6 +551,7 @@ position = Vector2(-1, 4)
 shape = SubResource("CircleShape2D_2h8kj")
 
 [node name="PlayerHealthbar" type="ProgressBar" parent="."]
+z_index = 10
 offset_left = -302.0
 offset_top = -188.0
 offset_right = -70.0

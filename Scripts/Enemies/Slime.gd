@@ -13,8 +13,6 @@ var enemyIsDead = false
 var enemy_has_cooldown_attack = false
 var player_is_inattack_range = false
 
-func _ready():
-	$Stats.health = 60
 
 func _physics_process(delta):
 	attack_player()
