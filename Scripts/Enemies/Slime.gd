@@ -16,6 +16,7 @@ var player_is_inattack_range = false
 
 func _physics_process(delta):
 	attack_player()
+	update_slime_healthbar()
 	
 	if enemyIsDead:
 		$SlimeAnimationPlayer.play('Death')
@@ -76,3 +77,8 @@ func _on_enemy_hitbox_body_exited(body):
 
 func _on_attack_timer_timeout():
 	enemy_has_cooldown_attack = false
+	
+	
+func update_slime_healthbar():
+	var healthbar = $HealthBar;
+	healthbar.value = slime_stats.health

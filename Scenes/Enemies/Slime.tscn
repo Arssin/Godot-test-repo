@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bvgmhpcxt7eks"]
+[gd_scene load_steps=33 format=3 uid="uid://bvgmhpcxt7eks"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/Slime.gd" id="1_dexgf"]
 [ext_resource type="Texture2D" uid="uid://lvl13pjxkynv" path="res://Assets/Enemies/Slime-SpriteSheet.png" id="2_7ir1x"]
@@ -291,6 +291,11 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_likhc"]
 radius = 21.25
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wbvw7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1y2fa"]
+bg_color = Color(0.419608, 0.0117647, 0.0980392, 1)
+
 [node name="SlimeEnemy" type="CharacterBody2D"]
 z_index = 2
 scale = Vector2(0.8, 0.8)
@@ -333,6 +338,18 @@ script = ExtResource("3_o1km1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hurtbox"]
 position = Vector2(3.75, -2.5)
 shape = SubResource("CircleShape2D_likhc")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -7.5
+offset_top = -18.75
+offset_right = 22.5
+offset_bottom = -14.75
+scale = Vector2(0.79705, 0.722708)
+theme_override_styles/background = SubResource("StyleBoxEmpty_wbvw7")
+theme_override_styles/fill = SubResource("StyleBoxFlat_1y2fa")
+max_value = 60.0
+value = 60.0
+show_percentage = false
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
