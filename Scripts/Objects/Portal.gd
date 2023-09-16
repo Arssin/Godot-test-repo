@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 
 @onready var _animated_sprite = $Portal_sprite
+@onready var enter_modal = $"Text-Dialog"
 
 
 var player_entered = false
@@ -18,9 +19,10 @@ func _process(delta):
 func _on_area_2d_body_entered(body):
 	if body.has_method('get_input_soul_player'):
 		player_entered = true
-	
+		enter_modal.show()
 
 
 func _on_area_2d_body_exited(body):
 	if body.has_method("get_input_soul_player"):
 		player_entered = false
+		enter_modal.hide()
