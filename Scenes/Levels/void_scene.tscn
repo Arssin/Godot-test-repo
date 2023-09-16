@@ -1,12 +1,34 @@
-[gd_scene load_steps=5 format=3 uid="uid://jxdypgw8vxg4"]
+[gd_scene load_steps=9 format=3 uid="uid://jxdypgw8vxg4"]
 
 [ext_resource type="Texture2D" uid="uid://fmcdipe633x2" path="res://Assets/VoidAssets/Void_fullbg.png" id="1_aok71"]
 [ext_resource type="PackedScene" uid="uid://dqp103qrkml2d" path="res://Scenes/Player/Player_Soul.tsc.tscn" id="2_aaqso"]
 [ext_resource type="Script" path="res://Scripts/Objects/Portal.gd" id="3_551wp"]
+[ext_resource type="Texture2D" uid="uid://cbliwtmeg5ta6" path="res://Assets/VoidAssets/Portal.png" id="3_r3v5c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ji78m"]
+atlas = ExtResource("3_r3v5c")
+region = Rect2(0, 0, 48, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pkco"]
+atlas = ExtResource("3_r3v5c")
+region = Rect2(48, 0, 48, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5o4ye"]
+atlas = ExtResource("3_r3v5c")
+region = Rect2(96, 0, 48, 60)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jmhua"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ji78m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7pkco")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5o4ye")
+}],
 "loop": true,
 "name": &"portal-animation",
 "speed": 5.0
@@ -24,11 +46,15 @@ texture = ExtResource("1_aok71")
 polygon = PackedVector2Array(143, 95, 120, 97, 75, 103, 54, 121, 49, 141, 44, 159, 39, 184, 32, 227, 33, 246, 35, 286, 55, 298, 109, 300, 192, 303, 212, 305, 264, 303, 278, 291, 297, 233, 299, 221, 311, 209, 335, 200, 375, 205, 384, 222, 386, 380, 393, 387, 412, 422, 433, 429, 441, 436, 442, 442, 499, 442, 578, 443, 599, 425, 604, 377, 604, 334, 614, 318, 709, 322, 734, 313, 922, 312, 942, 291, 940, 19, 724, 21, 726, 225, 699, 226, 679, 209, 660, 199, 645, 196, 619, 198, 607, 203, 559, 238, 539, 239, 529, 240, 506, 238, 453, 212, 444, 196, 434, 149, 420, 134, 396, 120, 361, 119, 295, 119, 271, 95, 244, 87, 218, 85, 168, 92, 152, 94, 147, 94, 145, 82, 172, 62, 428, 93, 620, 179, 706, 8, 956, 10, 957, 148, 954, 408, 697, 455, 359, 453, 10, 299, 26, 97, 148, 60, 147, 94)
 
 [node name="Player" type="Node2D" parent="."]
+z_index = 1
 
 [node name="Player_Soul_tsc" parent="Player" instance=ExtResource("2_aaqso")]
 position = Vector2(118, 189)
 
 [node name="Portal" type="AnimatedSprite2D" parent="."]
+position = Vector2(830, 70)
 sprite_frames = SubResource("SpriteFrames_jmhua")
 animation = &"portal-animation"
+frame_progress = 0.896767
+speed_scale = 0.45
 script = ExtResource("3_551wp")
