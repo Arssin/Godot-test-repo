@@ -10,7 +10,8 @@ func _process(delta):
 	_animated_sprite.play("portal-animation")
 	
 	if player_entered == true:
-		print('essa')
+		if Input.is_action_just_pressed("enter_clicked"):
+			get_tree().change_scene_to_file("res://Scenes/Levels/town_scene.tscn")
 	
 
 
