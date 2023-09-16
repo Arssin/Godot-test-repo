@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://jxdypgw8vxg4"]
 
 [ext_resource type="Texture2D" uid="uid://fmcdipe633x2" path="res://Assets/VoidAssets/Void_fullbg.png" id="1_aok71"]
-[ext_resource type="PackedScene" uid="uid://d0mdar2ppjc8n" path="res://Scenes/Player/Player.tscn" id="2_x6sae"]
+[ext_resource type="PackedScene" uid="uid://dqp103qrkml2d" path="res://Scenes/Player/Player_Soul.tsc.tscn" id="2_aaqso"]
 
 [node name="void_scene" type="Node2D"]
 
@@ -11,5 +11,4 @@ texture = ExtResource("1_aok71")
 
 [node name="Player" type="Node2D" parent="."]
 
-[node name="Player2" parent="Player" instance=ExtResource("2_x6sae")]
-position = Vector2(321, 201)
+[node name="Player_Soul_tsc" parent="Player" instance=ExtResource("2_aaqso")]
