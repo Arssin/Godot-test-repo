@@ -1,14 +1,17 @@
 extends CharacterBody2D
 
 
-# Called when the node enters the scene tree for the first time.
+
+@onready var player_stats = $Player_Stats
+
+
 func _ready():
-	pass # Replace with function body.
+	pass 
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	get_input()
+	move_and_slide()
 	
 	
 	
@@ -21,3 +24,9 @@ func get_input():
 		pass
 	elif position_mouse_x > global_position.x: 
 		pass
+		
+	
+	if input_direction:
+		velocity = input_direction * player_stats.player_speed
+	else: 
+		velocity = input_direction * 0
