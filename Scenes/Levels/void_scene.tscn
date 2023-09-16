@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://jxdypgw8vxg4"]
+[gd_scene load_steps=5 format=3 uid="uid://jxdypgw8vxg4"]
 
 [ext_resource type="Texture2D" uid="uid://fmcdipe633x2" path="res://Assets/VoidAssets/Void_fullbg.png" id="1_aok71"]
 [ext_resource type="PackedScene" uid="uid://dqp103qrkml2d" path="res://Scenes/Player/Player_Soul.tsc.tscn" id="2_aaqso"]
+[ext_resource type="Script" path="res://Scripts/Objects/Portal.gd" id="3_551wp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jmhua"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"portal-animation",
+"speed": 5.0
+}]
 
 [node name="void_scene" type="Node2D"]
 
@@ -18,3 +27,8 @@ polygon = PackedVector2Array(143, 95, 120, 97, 75, 103, 54, 121, 49, 141, 44, 15
 
 [node name="Player_Soul_tsc" parent="Player" instance=ExtResource("2_aaqso")]
 position = Vector2(118, 189)
+
+[node name="Portal" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jmhua")
+animation = &"portal-animation"
+script = ExtResource("3_551wp")
