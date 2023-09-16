@@ -24,3 +24,4 @@ position = Vector2(118, 189)
 [node name="Portal" type="Node2D" parent="."]
 
 [node name="Portal" parent="Portal" instance=ExtResource("3_ripev")]
+position = Vector2(777, 26)
