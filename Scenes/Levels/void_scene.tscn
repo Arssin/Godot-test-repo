@@ -51,7 +51,9 @@ z_index = 1
 [node name="Player_Soul_tsc" parent="Player" instance=ExtResource("2_aaqso")]
 position = Vector2(118, 189)
 
-[node name="Portal" type="AnimatedSprite2D" parent="."]
+[node name="Portal" type="Node2D" parent="."]
+
+[node name="Portal_sprite" type="AnimatedSprite2D" parent="Portal"]
 position = Vector2(830, 70)
 sprite_frames = SubResource("SpriteFrames_jmhua")
 animation = &"portal-animation"
