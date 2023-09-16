@@ -1,10 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqp103qrkml2d"]
+[gd_scene load_steps=4 format=3 uid="uid://dqp103qrkml2d"]
+
+[ext_resource type="Script" path="res://Scripts/Player/Player_soul_script.gd" id="1_gp0ti"]
+[ext_resource type="Texture2D" uid="uid://cy1iydjca2rjc" path="res://Assets/Player/Player_Soul.png" id="2_tcjni"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uqy3p"]
 
 [node name="Player_Soul_tsc" type="CharacterBody2D"]
+position = Vector2(149, 37)
+script = ExtResource("1_gp0ti")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_tcjni")
+hframes = 9
+vframes = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 

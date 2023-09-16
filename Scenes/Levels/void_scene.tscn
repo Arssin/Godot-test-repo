@@ -12,3 +12,4 @@ texture = ExtResource("1_aok71")
 [node name="Player" type="Node2D" parent="."]
 
 [node name="Player_Soul_tsc" parent="Player" instance=ExtResource("2_aaqso")]
+position = Vector2(118, 189)
