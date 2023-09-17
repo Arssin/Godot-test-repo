@@ -1,11 +1,22 @@
-extends Node
+extends Node2D
 
+var player_entered = false
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	
+	if player_entered == true:
+		if Input.is_action_just_pressed("enter_clicked"):
+			print('Shop Opened')
+	
+
+
+func _on_area_2d_body_entered(body):
+	if body.has_method('get_input_soul_player'):
+		player_entered = true
+#		enter_modal.show()
+
+
+func _on_area_2d_body_exited(body):
+	if body.has_method("get_input_soul_player"):
+		player_entered = false
+#		enter_modal.hide()
