@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://jxdypgw8vxg4"]
+[gd_scene load_steps=19 format=3 uid="uid://jxdypgw8vxg4"]
 
 [ext_resource type="Texture2D" uid="uid://8dbvo7whxyfa" path="res://Assets/VoidAssets/VoidObj.png" id="1_1ahdb"]
 [ext_resource type="Texture2D" uid="uid://fmcdipe633x2" path="res://Assets/VoidAssets/Void_fullbg.png" id="1_aok71"]
 [ext_resource type="PackedScene" uid="uid://dqp103qrkml2d" path="res://Scenes/Player/Player_Soul.tsc.tscn" id="2_aaqso"]
 [ext_resource type="PackedScene" uid="uid://btq3m22v3wmap" path="res://Scenes/Objects/Portal_scene.tscn" id="3_ripev"]
+[ext_resource type="PackedScene" uid="uid://cruwxqopg83hy" path="res://Scenes/Npc/shopper_npc.tscn" id="4_5jhj5"]
 [ext_resource type="Texture2D" uid="uid://cu8hhmhnk7gqa" path="res://Assets/VoidAssets/GroundVoidObjects.png" id="5_2xane"]
 [ext_resource type="Texture2D" uid="uid://cp2nkw17qd3rr" path="res://Assets/VoidAssets/GroundObjectsPlatform.png" id="6_p3pkl"]
 
@@ -2253,6 +2254,10 @@ z_index = 1
 
 [node name="Portal" parent="Portal" instance=ExtResource("3_ripev")]
 position = Vector2(785, 22)
+
+[node name="shopper_npc" parent="." instance=ExtResource("4_5jhj5")]
+z_index = 3
+position = Vector2(647, 205.4)
 
 [node name="Shop+Castle" type="TileMap" parent="."]
 position = Vector2(8, -3.72529e-09)

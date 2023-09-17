@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cruwxqopg83hy"]
+
+[ext_resource type="Texture2D" uid="uid://clvn74wa3y0dn" path="res://Assets/VoidAssets/void_shoper.png" id="1_eqliy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ufmn"]
+
+[node name="shopper_npc" type="CharacterBody2D"]
+position = Vector2(18, 18)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_eqliy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, -7)
+shape = SubResource("CircleShape2D_8ufmn")
