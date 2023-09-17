@@ -4,17 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://j08fd11rcrcs" path="res://Assets/Player/Player_Soul.png" id="2_tcjni"]
 [ext_resource type="Script" path="res://Scripts/Global/PlayerStats.gd" id="3_tpqk7"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_eextj"]
-radius = 8.06226
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vmbko"]
+radius = 7.5
+height = 18.0014
 
 [node name="Player_Soul_tsc" type="CharacterBody2D"]
 position = Vector2(149, 37)
 script = ExtResource("1_gp0ti")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 2)
-rotation = -2.9909
-shape = SubResource("CircleShape2D_eextj")
+position = Vector2(-0.5, 3)
+rotation = -3.14013
+shape = SubResource("CapsuleShape2D_vmbko")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_tcjni")
