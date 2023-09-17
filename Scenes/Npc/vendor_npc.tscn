@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://clvn74wa3y0dn" path="res://Assets/VoidAssets/void_shoper.png" id="2_n3788"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pjssj"]
-radius = 35.2278
+radius = 51.0098
 
 [sub_resource type="Theme" id="Theme_t4ivm"]
 default_font_size = 20
@@ -23,6 +23,7 @@ position = Vector2(-4, -7)
 shape = SubResource("CircleShape2D_pjssj")
 
 [node name="Vendor-Modal" type="TextEdit" parent="."]
+visible = false
 offset_left = -69.0
 offset_top = -110.0
 offset_right = 65.0
@@ -30,5 +31,7 @@ offset_bottom = -62.0
 theme = SubResource("Theme_t4ivm")
 text = "       shop
 "
+editable = false
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

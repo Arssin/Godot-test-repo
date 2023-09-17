@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var vendor_modal = $"Vendor-Modal"
+
 var player_entered = false
 
 func _process(delta):
@@ -13,10 +15,10 @@ func _process(delta):
 func _on_area_2d_body_entered(body):
 	if body.has_method('get_input_soul_player'):
 		player_entered = true
-#		enter_modal.show()
+		vendor_modal.show()
 
 
 func _on_area_2d_body_exited(body):
 	if body.has_method("get_input_soul_player"):
 		player_entered = false
-#		enter_modal.hide()
+		vendor_modal.hide()
